@@ -8,6 +8,6 @@ public class HelloWorldController {
 
     @GetMapping
     public String hello() {
-        return "Opsera EBS Testing";
+        return "Opsera EBS Testing with Domain and Zone id";
     }
 }
