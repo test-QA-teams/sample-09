@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+  
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-demo
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: back-end
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v1
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DOCKER_ENV
+
