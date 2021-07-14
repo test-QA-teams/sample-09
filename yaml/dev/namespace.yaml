@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: newtool1
+  name: argocd
   
 ---
 
@@ -9,7 +9,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argo-demo
-  namespace: newtool1
+  namespace: argocd
 spec:
   replicas: 1
   selector:
