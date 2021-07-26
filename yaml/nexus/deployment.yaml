@@ -40,7 +40,7 @@ spec:
             - containerPort: 8072
           env:
           - name: DOCKER_ENV
-            value: "dev"
+            value: "kubernetes"
 
 ---
 #Service
