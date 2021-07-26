@@ -33,7 +33,7 @@ spec:
         - name: docker-nexus
       containers:
         - name: back-end
-          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/github-integrator:argov2
+          image: 8083-nexus-nei3moew.ldapowner.opsera.io/docker-private:docker-build
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
