@@ -50,23 +50,3 @@ spec:
   type: NodePort
 
 ---
-# Ingress
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  labels:
-    app.kubernetes.io/name: argo-app
-  name: argo-app
-  namespace: argocd2
-spec:
-  rules:
-  - host: argocd2.nawaz-demo.opsera.io
-    http:
-      paths:
-      - backend:
-          serviceName: argo-app
-          servicePort: 8072
-        path: /
----
