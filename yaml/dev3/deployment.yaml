@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: argocd
-  
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -25,8 +25,8 @@ spec:
           ports:
             - containerPort: 8072
           env:
-          - name: DOCKER_ENV
-            value: "dev"
+            - name: DOCKER_ENV
+              value: "dev"
 
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -46,30 +46,30 @@ spec:
         app: web
     spec:
       containers:
-      - name: back-end
-        image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v2
-        env:
-        - name: DOCKER_ENV
-          value: "dev"
-        resources:
-          requests:
-            cpu: 25m
-            memory: 50Mi
-          limits:
-            cpu: 150m
-            memory: 150Mi
-        ports:
-        - containerPort: 8072
+        - name: back-end
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v2
+          env:
+            - name: DOCKER_ENV
+              value: "dev"
+          resources:
+            requests:
+              cpu: 25m
+              memory: 50Mi
+            limits:
+              cpu: 150m
+              memory: 150Mi
+          ports:
+            - containerPort: 8072
   strategy:
     canary:
       stableService: rargo-demo-statble
       canaryService: argo-demo-canary
       #trafficRouting:
-        #nginx:
-          #stableIngress: realtimeapp-ingress
+      #nginx:
+      #stableIngress: realtimeapp-ingress
       steps:
-      - setWeight: 50
-      - pause: {}
+        - setWeight: 50
+        - pause: {}
 
 ---
 #Service
@@ -82,30 +82,10 @@ metadata:
   namespace: argocd
 spec:
   ports:
-  - name: http
-    port: 8072
-    protocol: TCP
-    targetPort: http
-  selector:
-    app: web
-  sessionAffinity: None
-  type: NodePort
-
-  ---
-#Service
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/name: argo-demo
-  name: argo-demo-canary
-  namespace: argocd
-spec:
-  ports:
-  - name: http
-    port: 8072
-    protocol: TCP
-    targetPort: http
+    - name: http
+      port: 8072
+      protocol: TCP
+      targetPort: http
   selector:
     app: web
   sessionAffinity: None
@@ -124,11 +104,12 @@ metadata:
   namespace: argocd
 spec:
   rules:
-  - host: argocd.nawaz-demo.opsera.io
-    http:
-      paths:
-      - backend:
-          serviceName: argo-demo
-          servicePort: 8072
-        path: /
+    - host: argocd.nawaz-demo.opsera.io
+      http:
+        paths:
+          - backend:
+              serviceName: argo-demo
+              servicePort: 8072
+            path: /
 ---
+
