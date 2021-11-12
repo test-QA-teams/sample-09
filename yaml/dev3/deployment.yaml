@@ -29,13 +29,76 @@ spec:
             value: "dev"
 
 ---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: argo-demo
+  labels:
+    app: argo-demo
+spec:
+  selector:
+    matchLabels:
+      app: web
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: back-end
+        image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/opsera-nexus-integrator:v2
+        env:
+        - name: DOCKER_ENV
+          value: "dev"
+        resources:
+          requests:
+            cpu: 25m
+            memory: 50Mi
+          limits:
+            cpu: 150m
+            memory: 150Mi
+        ports:
+        - containerPort: 8072
+  strategy:
+    canary:
+      stableService: rargo-demo-statble
+      canaryService: argo-demo-canary
+      #trafficRouting:
+        #nginx:
+          #stableIngress: realtimeapp-ingress
+      steps:
+      - setWeight: 50
+      - pause: {}
+
+---
 #Service
 apiVersion: v1
 kind: Service
 metadata:
   labels:
     app.kubernetes.io/name: argo-demo
-  name: argo-demo
+  name: argo-demo-statble
+  namespace: argocd
+spec:
+  ports:
+  - name: http
+    port: 8072
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: web
+  sessionAffinity: None
+  type: NodePort
+
+  ---
+#Service
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: argo-demo
+  name: argo-demo-canary
   namespace: argocd
 spec:
   ports:
