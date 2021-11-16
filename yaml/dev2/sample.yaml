@@ -1,52 +1,53 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: argocd2
-  
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: argo-app
-  namespace: argocd2
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: web
-  template:
-    metadata:
-      labels:
-        app: web
-    spec:
-      containers:
-        - name: back-end
-          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/github-integrator:argov2
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8072
-          env:
-          - name: DOCKER_ENV
-            value: "dev"
-
----
-#Service
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app.kubernetes.io/name: argo-app
-  name: argo-app
-  namespace: argocd2
-spec:
-  ports:
-  - name: http
-    port: 8072
-    protocol: TCP
-    targetPort: http
-  selector:
-    app: web
-  sessionAffinity: None
-  type: NodePort
-
----
+prtestaprtestpprtestiprtestVprtesteprtestrprtestsprtestiprtestoprtestnprtest:prtest prtestvprtest1prtest
+prtestkprtestiprtestnprtestdprtest:prtest prtestNprtestaprtestmprtesteprtestsprtestpprtestaprtestcprtesteprtest
+prtestmprtesteprtesttprtestaprtestdprtestaprtesttprtestaprtest:prtest
+prtest prtest prtestnprtestaprtestmprtesteprtest:prtest prtestaprtestrprtestgprtestoprtestcprtestdprtest2prtest
+prtest prtest prtest
+prtest-prtest-prtest-prtest
+prtestaprtestpprtestiprtestVprtesteprtestrprtestsprtestiprtestoprtestnprtest:prtest prtestaprtestpprtestpprtestsprtest/prtestvprtest1prtest
+prtestkprtestiprtestnprtestdprtest:prtest prtestDprtesteprtestpprtestlprtestoprtestyprtestmprtesteprtestnprtesttprtest
+prtestmprtesteprtesttprtestaprtestdprtestaprtesttprtestaprtest:prtest
+prtest prtest prtestnprtestaprtestmprtesteprtest:prtest prtestaprtestrprtestgprtestoprtest-prtestaprtestpprtestpprtest
+prtest prtest prtestnprtestaprtestmprtesteprtestsprtestpprtestaprtestcprtesteprtest:prtest prtestaprtestrprtestgprtestoprtestcprtestdprtest2prtest
+prtestsprtestpprtesteprtestcprtest:prtest
+prtest prtest prtestrprtesteprtestpprtestlprtestiprtestcprtestaprtestsprtest:prtest prtest1prtest
+prtest prtest prtestsprtesteprtestlprtesteprtestcprtesttprtestoprtestrprtest:prtest
+prtest prtest prtest prtest prtestmprtestaprtesttprtestcprtesthprtestLprtestaprtestbprtesteprtestlprtestsprtest:prtest
+prtest prtest prtest prtest prtest prtest prtestaprtestpprtestpprtest:prtest prtestwprtesteprtestbprtest
+prtest prtest prtesttprtesteprtestmprtestpprtestlprtestaprtesttprtesteprtest:prtest
+prtest prtest prtest prtest prtestmprtesteprtesttprtestaprtestdprtestaprtesttprtestaprtest:prtest
+prtest prtest prtest prtest prtest prtest prtestlprtestaprtestbprtesteprtestlprtestsprtest:prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtestaprtestpprtestpprtest:prtest prtestwprtesteprtestbprtest
+prtest prtest prtest prtest prtestsprtestpprtesteprtestcprtest:prtest
+prtest prtest prtest prtest prtest prtest prtestcprtestoprtestnprtesttprtestaprtestiprtestnprtesteprtestrprtestsprtest:prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest-prtest prtestnprtestaprtestmprtesteprtest:prtest prtestbprtestaprtestcprtestkprtest-prtesteprtestnprtestdprtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtestiprtestmprtestaprtestgprtesteprtest:prtest prtest4prtest4prtest0prtest9prtest5prtest3prtest9prtest3prtest7prtest6prtest1prtest7prtest.prtestdprtestkprtestrprtest.prtesteprtestcprtestrprtest.prtestuprtestsprtest-prtesteprtestaprtestsprtesttprtest-prtest2prtest.prtestaprtestmprtestaprtestzprtestoprtestnprtestaprtestwprtestsprtest.prtestcprtestoprtestmprtest/prtestgprtestiprtesttprtesthprtestuprtestbprtest-prtestiprtestnprtesttprtesteprtestgprtestrprtestaprtesttprtestoprtestrprtest:prtestaprtestrprtestgprtestoprtestvprtest2prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtestiprtestmprtestaprtestgprtesteprtestPprtestuprtestlprtestlprtestPprtestoprtestlprtestiprtestcprtestyprtest:prtest prtestAprtestlprtestwprtestaprtestyprtestsprtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtestpprtestoprtestrprtesttprtestsprtest:prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest-prtest prtestcprtestoprtestnprtesttprtestaprtestiprtestnprtesteprtestrprtestPprtestoprtestrprtesttprtest:prtest prtest8prtest0prtest7prtest2prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtesteprtestnprtestvprtest:prtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest-prtest prtestnprtestaprtestmprtesteprtest:prtest prtestDprtestOprtestCprtestKprtestEprtestRprtest_prtestEprtestNprtestVprtest
+prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtest prtestvprtestaprtestlprtestuprtesteprtest:prtest prtest"prtestdprtesteprtestvprtest"prtest
+prtest
+prtest-prtest-prtest-prtest
+prtest#prtestSprtesteprtestrprtestvprtestiprtestcprtesteprtest
+prtestaprtestpprtestiprtestVprtesteprtestrprtestsprtestiprtestoprtestnprtest:prtest prtestvprtest1prtest
+prtestkprtestiprtestnprtestdprtest:prtest prtestSprtesteprtestrprtestvprtestiprtestcprtesteprtest
+prtestmprtesteprtesttprtestaprtestdprtestaprtesttprtestaprtest:prtest
+prtest prtest prtestlprtestaprtestbprtesteprtestlprtestsprtest:prtest
+prtest prtest prtest prtest prtestaprtestpprtestpprtest.prtestkprtestuprtestbprtesteprtestrprtestnprtesteprtesttprtesteprtestsprtest.prtestiprtestoprtest/prtestnprtestaprtestmprtesteprtest:prtest prtestaprtestrprtestgprtestoprtest-prtestaprtestpprtestpprtest
+prtest prtest prtestnprtestaprtestmprtesteprtest:prtest prtestaprtestrprtestgprtestoprtest-prtestaprtestpprtestpprtest
+prtest prtest prtestnprtestaprtestmprtesteprtestsprtestpprtestaprtestcprtesteprtest:prtest prtestaprtestrprtestgprtestoprtestcprtestdprtest2prtest
+prtestsprtestpprtesteprtestcprtest:prtest
+prtest prtest prtestpprtestoprtestrprtesttprtestsprtest:prtest
+prtest prtest prtest-prtest prtestnprtestaprtestmprtesteprtest:prtest prtesthprtesttprtesttprtestpprtest
+prtest prtest prtest prtest prtestpprtestoprtestrprtesttprtest:prtest prtest8prtest0prtest7prtest2prtest
+prtest prtest prtest prtest prtestpprtestrprtestoprtesttprtestoprtestcprtestoprtestlprtest:prtest prtestTprtestCprtestPprtest
+prtest prtest prtest prtest prtesttprtestaprtestrprtestgprtesteprtesttprtestPprtestoprtestrprtesttprtest:prtest prtesthprtesttprtesttprtestpprtest
+prtest prtest prtestsprtesteprtestlprtesteprtestcprtesttprtestoprtestrprtest:prtest
+prtest prtest prtest prtest prtestaprtestpprtestpprtest:prtest prtestwprtesteprtestbprtest
+prtest prtest prtestsprtesteprtestsprtestsprtestiprtestoprtestnprtestAprtestfprtestfprtestiprtestnprtestiprtesttprtestyprtest:prtest prtestNprtestoprtestnprtesteprtest
+prtest prtest prtesttprtestyprtestpprtesteprtest:prtest prtestNprtestoprtestdprtesteprtestPprtestoprtestrprtesttprtest
+prtest
+prtest-prtest-prtest-prtest
+prtest
