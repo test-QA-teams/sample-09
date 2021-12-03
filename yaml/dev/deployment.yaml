@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argocd1
+  name: devaqq
   
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: argo-demo
-  namespace: argocd
+  namespace: devaqq
 spec:
   replicas: 1
   selector:
@@ -36,7 +36,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argo-demo
   name: argo-demo
-  namespace: argocd
+  namespace: devaqq
 spec:
   ports:
   - name: http
@@ -58,7 +58,7 @@ metadata:
   labels:
     app.kubernetes.io/name: argo-demo
   name: argo-demo
-  namespace: argocd
+  namespace: devaqq
 spec:
   rules:
   - host: argocd.nawaz-demo.opsera.io
