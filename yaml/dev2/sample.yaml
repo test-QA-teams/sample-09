@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/rollback-sdlc-test:argov1
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/rollback-sdlc-test:argorollback
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
