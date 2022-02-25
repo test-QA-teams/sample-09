@@ -34,7 +34,7 @@ spec:
         - name: docker-nexus
       containers:
         - name: back-end
-          image: ngnix
+          image: $DOCKER_IMAGE
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
