@@ -34,7 +34,7 @@ spec:
         - name: docker-nexus
       containers:
         - name: back-end
-          image: 8083-nexus-nei3moew.ldapowner.opsera.io/docker-private:$IMAGE_TAG
+          image: $DOCKER_IMAGE
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
