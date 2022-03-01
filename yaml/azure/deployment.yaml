@@ -34,7 +34,7 @@ spec:
         - name: docker-nexus
       containers:
         - name: back-end
-          image: testrgstr.azurecr.io/rollback:11
+          image: testrgstr.azurecr.io/rollback:47
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
