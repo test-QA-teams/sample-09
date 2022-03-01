@@ -6,7 +6,7 @@ metadata:
 ---
 apiVersion: v1
 data:
-  .dockerconfigjson: YjUzMWNmNTk3MDFlNTJiMDA0ODdkZTA0Y2Y3YWI1YWE5ODBmOTdmOTM4MDhkYzA1MzVmNDNkNzg3MzY1N2U4ZDE5YjJhYjY5ZDRlMTlmNDNmZmNkOTI2NzU1YjE4ZTQzNGZlMWZkYzVhYzNiYmE5YzczOTVhM2E5NGNhZGE3N2M=
+  .dockerconfigjson: b531cf59701e52b00487de04cf7ab5aa980f97f93808dc0535f43d7873657e8d19b2ab69d4e19f43ffcd926755b18e434fe1fdc5ac3bba9c7395a3a94cada77c
 kind: Secret
 metadata:
   creationTimestamp: null
