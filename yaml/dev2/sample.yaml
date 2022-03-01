@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: testrgstr.azurecr.io/rollback:16
+          image: 
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
