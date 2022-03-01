@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: opseradevenv.jfrog.io/private-docker:argorollbacktest2
+          image: 
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
