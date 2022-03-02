@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: testrgstr.azurecr.io/rollback:16
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/github-integrator:prtest1
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
