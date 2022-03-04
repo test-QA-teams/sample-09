@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 8083-nexus-nei3moew.ldapowner.opsera.io/docker-private:argorollbacktest2
+          image: opseradevenv.jfrog.io/private-docker:argorollbacktest3
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
