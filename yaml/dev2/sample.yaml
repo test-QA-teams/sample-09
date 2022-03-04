@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 8083-nexus-nei3moew.ldapowner.opsera.io/docker-private:a1
+          image: testrgstr.azurecr.io/rollback:55
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
