@@ -1,1 +1,1 @@
-export opsera_asdfasd="dhfg1"
+export opsera_asdfasd="inside the shellscript"
