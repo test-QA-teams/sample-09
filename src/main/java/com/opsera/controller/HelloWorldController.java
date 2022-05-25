@@ -8,6 +8,7 @@ public class HelloWorldController {
 
     @GetMapping
     public String hello() {
-        return "Opsera EBS Testing Runcount 59 with Domain and Zone id gitoperation validation";
+        String region = System.getenv("region");
+        return "Opsera EBS Testing Runcount 59 with Domain and Zone id gitoperation validation"+region;
     }
 }
