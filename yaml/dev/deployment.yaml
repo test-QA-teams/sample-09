@@ -36,7 +36,7 @@ metadata:
   labels:
     app.kubernetes.io/name: kustomize-demo
   name: kustomize-demo
-  namespace: argocd
+  namespace: kustomize
 spec:
   ports:
   - name: http
