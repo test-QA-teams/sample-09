@@ -8,6 +8,6 @@ public class HelloWorldController {
 
     @GetMapping
     public String hello() {
-        return "Opsera argo kustomize example...";
+        return "Opsera argo kustomize example....";
     }
 }
