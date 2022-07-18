@@ -4,6 +4,18 @@ metadata:
   name: jfrog-argo
   
 ---
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJvcHNlcmF0ZXN0Lmpmcm9nLmlvIjp7InVzZXJuYW1lIjoicHJhYmFrYXJhbkBvcHNlcmEuaW8iLCJwYXNzd29yZCI6Ik9wc2VyYUAxMjMiLCJlbWFpbCI6InB1cnVzaG90aGFtYW5Ab3BzZXJhLmlvIiwiYXV0aCI6ImNISmhZbUZyWVhKaGJrQnZjSE5sY21FdWFXODZUM0J6WlhKaFFERXlNdz09In19fQ==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: docker-jfrog
+  namespace: jfrog-argo
+type: kubernetes.io/dockerconfigjson
+  
+  
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -19,6 +31,8 @@ spec:
       labels:
         app: web
     spec:
+      imagePullSecrets:
+        - name: docker-jfrog
       containers:
         - name: back-end
           image: the-my-app
