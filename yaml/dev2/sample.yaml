@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/github-integrator:argov1
+          image: 440953937617.dkr.ecr.us-east-2.amazonaws.com/github-integrator:20220719-20220719035806-13
           imagePullPolicy: Always
           ports:
             - containerPort: 8072
