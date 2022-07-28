@@ -35,7 +35,7 @@ spec:
         - name: docker-jfrog
       containers:
         - name: back-end
-          image: the-my-app
+          image: example
           ports:
             - containerPort: 8072
           env:
