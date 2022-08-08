@@ -5,9 +5,9 @@ data:
 kind: Secret
 metadata:
   creationTimestamp: null
-  name: springboot-secret
-  namespace: default
+  name: spring-sample-app-secret
 type: kubernetes.io/dockerconfigjson
+
 ---
 apiVersion: v1
 kind: Namespace
