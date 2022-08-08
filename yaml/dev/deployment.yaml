@@ -5,7 +5,7 @@ data:
 kind: Secret
 metadata:
   creationTimestamp: null
-  name: spring-sample-app-secret
+  name: springboot-secret
 type: kubernetes.io/dockerconfigjson
 
 ---
