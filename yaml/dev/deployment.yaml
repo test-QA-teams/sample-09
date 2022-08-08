@@ -34,7 +34,7 @@ spec:
         - name: springboot-secret
       containers:
         - name: back-end
-          image: opseratest.jfrog.io/opsera-docker-repo/springboot-helloworld:3cee458b636e487423e2660fe59ab8d924d3af6c
+          image: testrgstr.azurecr.io/springboot-app:9c8361aba600836f02491173f2533c6ecf2d5246
           ports:
             - containerPort: 8072
           env:
