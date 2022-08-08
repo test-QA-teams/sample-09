@@ -35,6 +35,7 @@ spec:
       containers:
         - name: back-end
           image: testrgstr.azurecr.io/springboot-app:9c8361aba600836f02491173f2533c6ecf2d5246
+          imagePullPolicy: Always
           ports:
             - containerPort: 8072
           env:
