@@ -63,23 +63,3 @@ spec:
   type: NodePort
 
 ---
-# Ingress
-apiVersion: v1
-kind: Ingress
-metadata:
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  labels:
-    app.kubernetes.io/name: jfrog-argo
-  namespace: jfrog-argo
-  name: jfrog-argo
-spec:
-  rules:
-  - host: opseratest.jfrog.io
-    http:
-      paths:
-      - backend:
-          serviceName: jfrog-argo
-          servicePort: 8072
-        path: /
----
