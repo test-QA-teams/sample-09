@@ -71,7 +71,6 @@ metadata:
     kubernetes.io/ingress.class: nginx
   labels:
     app.kubernetes.io/name: jfrog-argo-demo
-  name: jfrog-argo-demo
   namespace: jfrog-argo
 spec:
   rules:
