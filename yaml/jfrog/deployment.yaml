@@ -75,7 +75,7 @@ metadata:
   name: jfrog-argo
 spec:
   rules:
-  - host: jfrog-argo.nawaz-demo.opsera.io
+  - host: opseratest.jfrog.io
     http:
       paths:
       - backend:
