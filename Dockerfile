@@ -1,16 +1,14 @@
 #
-# Build stage
-#
-FROM maven:3.6.0-jdk-11-slim AS build
-COPY src /home/app/src
-COPY pom.xml /home/app
-RUN mvn -f /home/app/pom.xml clean package
-
-#
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/spring-boot-example-0.0.1-SNAPSHOT.jar /usr/local/lib/demo.jar
-RUN rm -rf /home/app
+
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/usr/local/lib/demo.jar"]
+
+RUN mkdir /app
+
+COPY target/*.jar /app/spring-boot-application.jar
+
+CMD ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app/spring-boot-application.jar"]
+
+HEALTHCHECK --interval=1m --timeout=3s CMD wget -q -T 3 -s http://localhost:8080/actuator/health/ || exit 1
