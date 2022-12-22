@@ -60,7 +60,7 @@ spec:
         path: /customerviewsvc/(.*)
         # path: *
         pathType: Prefix
-    host: a994e64b0fef54487a8e18c063bf3db1-854741739.us-east-2.elb.amazonaws.com
+   # host: a994e64b0fef54487a8e18c063bf3db1-854741739.us-east-2.elb.amazonaws.com
 status:
   loadBalancer: {}
 ---
