@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: argocd
+  name: argocd1
   
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: argo-demo
-  namespace: argocd
+  name: argo-demo1
+  namespace: argocd1
 spec:
   replicas: 1
   selector:
@@ -34,9 +34,9 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app.kubernetes.io/name: argo-demo
-  name: argo-demo
-  namespace: argocd
+    app.kubernetes.io/name: argo-demo1
+  name: argo-demo1
+  namespace: argocd1
 spec:
   ports:
   - name: http
@@ -56,16 +56,16 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
   labels:
-    app.kubernetes.io/name: argo-demo
-  name: argo-demo
-  namespace: argocd
+    app.kubernetes.io/name: argo-demo1
+  name: argo-demo1
+  namespace: argocd1
 spec:
   rules:
-  - host: argo-demo123.nawaz-demo.opsera.io
+  - host: argo-demo1.nawaz-demo.opsera.io
     http:
       paths:
       - backend:
-          serviceName: argo-demo
+          serviceName: argo-demo1
           servicePort: 8072
         path: /
 ---
