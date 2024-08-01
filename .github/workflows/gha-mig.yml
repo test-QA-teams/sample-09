@@ -1,0 +1,37 @@
+name: apat/gha-mig
+on:
+#   # The shortest interval you can run scheduled workflows is once every 5 minutes.
+#   period: '180'
+jobs:
+  Default-Stage-Default-Job:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.0
+      with:
+        clean: false
+    - name: repo-branch-task
+      run: |
+        git checkout -b branch_${{ github.workflow }}-${{ github.job }}-${{ github.run_id }}
+        git push --set-upstream origin branch_${{ github.workflow }}-${{ github.job }}-${{ github.run_id }}
+    - name: forEchoCommand
+      run: 'hello '
+    # warning: This will download all available artifacts, ensure this is the correct behavior.
+    - uses: actions/download-artifact@v4.1.0
+#     # There was an internal error transforming this item
+#     # Message: Failed to transform item
+#     - scp:
+#         host:
+#         - www.test.com
+#         - www.test1.com
+#         artifact:
+#           source-plan: APAT-BBTRIG
+#         destination-path: "/test/path/actions"
+#         authentication:
+#           username: admin
+#           password: BAMSCRT@0@0@ZdQ43D8As/r3jA10wLN8pw==
+#         host-fingerprint: shahgjhsagdjgdadasfaffs
+#         description: tocopy
+#       if: always()
+    - name: Tag Repository ${{ github.repository }}
+      run: "git tag \ngit push origin \n"
+      if: always()
